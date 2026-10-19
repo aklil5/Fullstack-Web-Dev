@@ -269,9 +269,13 @@ PROPS
 
 ---
 # Props Demo
+DYNAMIC CONTENT GOES FROM PARENT TO CHILD
+
 
 1. Implement props to a simple example - include destructured props
 
+
+CHILD COMPONENT
 export default class Card extends Component {
   render() {
     const {colorNo, name, email, phone} = this.props;
@@ -291,6 +295,14 @@ export default class Card extends Component {
 }
 
 
+
+PARENT COMPONENT (App.jsx)
+<Card colorNo='' name='' email='' phone=''/>
+<Card colorNo='' name='' email='' phone=''/>
+
+<Card colorNo='' name='' email='' phone=''/>
+
+we can call it as many times as we want changing the info inside the vars
 
 
 
@@ -321,6 +333,7 @@ export let userData = [
     }
 ]
 
+THE JS FILE SHOULD BE INSIDE [assets]
 
 {userData.map((singleUserData, i) => {
             return (
