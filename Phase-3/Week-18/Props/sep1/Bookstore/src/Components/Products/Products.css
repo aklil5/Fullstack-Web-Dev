@@ -9,110 +9,11 @@
   padding: 0 15px;
 }
 
-/* Product Card Structure */
-.product-card {
-  background-color: #ffffff;
-  border-radius: 8px;
-  width: calc(33.333% - 20px);
-  min-width: 280px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+className clash AVOID
 
-/* Card Header Colors */
-.card-header {
-  padding: 12px;
-  text-align: center;
-  color: white;
-  font-size: 14px;
-}
+Test.components mil file with css add argo (that has container class name with background color thats differenet) and try to not have the container class affect others - the container class thats in Produucts or Card file 
 
-.green-header {
-  background-color: #008000;
-}
 
-.orange-header {
-  background-color: #ff9800;
-}
-
-.grey-header, .gray-header {
-  background-color: #708090;
-}
-
-.gold-header {
-  background-color: #d4a017;
-}
-
-.black-header {
-  background-color: #000000;
-}
-
-.red-header {
-  background-color: #ff0000;
-}
-
-.product-title {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-/* Product Image */
-.product-image {
-  text-align: center;
-  padding: 20px 15px 10px;
-}
-
-.product-image img {
-  max-width: 100%;
-  height: 200px;
-  object-fit: contain;
-}
-
-/* Product Content */
-.product-content {
-  padding: 10px 20px;
-  flex-grow: 1;
-}
-
-.product-price {
-  color: #4caf50;
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.product-description {
-  font-size: 13px;
-  color: #666666;
-  line-height: 1.4;
-  height: 60px;
-  overflow: hidden;
-  display: -webkit-box;
-  line-clamp: 3;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-}
-
-/* Add to Cart Button */
-.add-to-cart {
-  text-align: center;
-  padding: 15px;
-}
-
-.btn {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  padding: 10px 24px;
-  font-size: 14px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.btn:hover {
-  background-color: #45a049;
-}
+import styles from '' // use a common name like styles
+filename [[Card.module.css]]
+when calling it inside a class [[className={styles.container]]
