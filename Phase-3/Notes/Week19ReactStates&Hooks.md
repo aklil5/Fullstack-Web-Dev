@@ -590,6 +590,9 @@ export default function UseEffect() {
 
 # 5. Basic React hooks: steps to implement context API and useContext() hook
 
+Whats React Context
+    - React Context is a way to manage state globally.
+    - It can be used together with the useState Hook to share state between deeply nested components.
 
 ## Whats context API OR (Global State)
     Question
@@ -610,12 +613,21 @@ Definition 2:
         - PROP DRILLING (also called "THREADING") refers to the process you have to go through to get data to parts of the React Component tree.
 
 
-Steps to use context API
+## Steps to use context API
+
+- App.js ------- "Data source"
+    - Component1
+        - Component2
+            - Component3 ------ "Use the data here!"
+            - UsingUseContext ----- "Use the data here!"
+
 ************
 Step 1
     - [CREATE THE CONTEXT] using the React.createContext() method
 
 `export const MyContext = React.createContext();`
+
+on [App.jsx]
 
 ---
 
@@ -650,6 +662,8 @@ function App() {
 }
 ```
 
+on [App.jsx]
+
 
 
 Step 3
@@ -678,11 +692,11 @@ function Component3(){
 }
 ```
 
- 
+ import it and and use it as the above
 
 
 ---
-How to use useContext
+## How to use useContext (a Hook)
 *********
 Step 1 and Step 2 remain the same with above. The last step is what differs. We can also divide the last step into three steps.
 
@@ -699,9 +713,14 @@ To use useContexr,
 
 
 
-
-
 theres 
 Provider
 C onsumer
 
+
+know more about
+    - useState
+    - useEffect
+    - useContext
+    - useReducer
+    - useRef
