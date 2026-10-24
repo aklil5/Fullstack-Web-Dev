@@ -1,4 +1,4 @@
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import Youtubeoct23 from './components/Youtube/Youtubeoct23'
 

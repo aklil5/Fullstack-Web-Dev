@@ -25,3 +25,9 @@
 .videoTitle a {
   color: #000;
 }
+.title-wraper {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 1.15em;
+  letter-spacing: -0.04em;
+}
