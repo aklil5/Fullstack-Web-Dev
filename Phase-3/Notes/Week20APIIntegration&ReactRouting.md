@@ -201,9 +201,10 @@ Final API request URL
     - to test if the URL is working, just copy and paste it on your browser.
 
 
-# 5. Demo on how to use the JSON data we obtained from YouTube API in our react component
+# 5. Demo on how to use the JSON data we obtained from YouTube API in our react component 
 
  
+
 
 
 
@@ -246,8 +247,289 @@ P II
 ---
 
 
+# 1. Limitations of React without React Router
+- Multiple page app VS Single page app (SPA)
+
+- Solution
+    - React Router
+        - React Router is a library for routing in React applications
+        - It allows you to define routes, which map to different components in your application
+
+    - npmjs.com
+        - search for "react-router-dom" and install
+
+    - Official website
+        - https://reactrouter.com/en/main
+
+    - install react-router-dom
+    (mainly for website)
+    or 
+    - install react-dom
 
 
+
+
+mulitple page
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <ul style="display: flex; justify-content: space-around; font-size: 30px;">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+    </ul>
+
+    <br />
+    <h1 style="font-size: 60px; text-align: center;">Home page</h1>
+</body>
+</html>
+
+```
+
+but react has only 1 entry page, Single page Application - (SPA)
+
+
+Mac Page
+Iphone Page
+Ipad Page
+Watch Page
+TV Page
+Music Page
+Support Page
+Cart Page
+
+ALL IN THE HOME PAGE
+
+
+
+
+
+
+
+
+
+
+# 2. Main parts of React Router
+    - Browser Router
+    - Routes
+        - Route
+    - Link
+
+
+
+- Browser Router
+    - <BrowserRouter> component is used to wrap your application and provide the routing functionality.
+        - on the Main.jsx wrap the <App /> component in <BrowserRouter></BrowserRouter>
+        - and import it from react-router-dom-
+
+
+
+- Routes
+    - <Routes> component wraps everything that are dependent on route.
+
+
+- Route
+    - <Route> components define the relationship between a path and a component to be rendered when the path is matched.
+
+    - Route objects have a 
+        - [path] property, which specifies the path to match, and a 
+        - [element] property, which specifies the component to render.
+
+```
+Added Component
+function Iphone() {
+    return(
+        <div>
+            <section className="internal-page-wrapper">
+                <div className="container">
+                    <div className="row h-100 align-items-center justify-content-center text-center">
+                        <div className="col-12 mt-5 pt-5">
+                            <h1 className="font-weight-bold">Iphone Page</h1>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    )
+}
+export default Iphone
+
+
+
+<Routes>
+        <Route path="/abebe" element={<h1><br/><nr/>Hello ABBE</h1>} />
+        <Route path="/bombaya" element={<h1><br/><br/>BombayaE</h1>} />
+
+
+        <Route path="/" element={<><Alert /><SectionOne /></>} />
+        <Route path="mac" element={<Mac />} />
+        <Route path="iphone" element={<Iphone />} />
+        <Route path="ipad " element={<Ipad />} />
+        <Route path="watch" element={<Watch />} />
+        <Route path="tv" element={<TV />} />
+        <Route path="music" element={<Music />} />
+        <Route path="support" element={<Support />} />
+        <Route path="cart" element={<Cart />} />
+
+      </Routes>
+```
+
+
+- Link
+    - <Link> component is used to create links between different routes in your application.
+    - Replaces another tag in react-router-dom
+        a -> Link
+        href="" => to=""
+        - So that our page doesnt have to refresh every time we open another page
+
+On Header component
+**********
+import { Link } from "react-router-dom"
+
+
+```
+<ul className="navbar-nav nav-justified w-100 nav-fill">
+    <li><Link to="/mac/">Mac</Link></li>
+    <li><Link to="/iphone">iphone</Link></li>
+    <li><Link to="/ipad">ipad</Link></li>
+    <li><Link to="/watch">watch</Link></li>
+    <li><Link to="/tv">tv</Link></li>
+    <li><Link to="/music">Music</Link></li>
+    <li><Link to="/support">Support</Link></li>
+    <li ><Link to="/search/"><img src={search} /></Link></li>
+    <li><Link  to="/cart/"><img src={cart} /></Link></li>
+</ul>
+
+
+```
+
+
+
+
+
+
+
+# 3. Non existing routes and Nested routes
+- Non existing routes
+
+- Shared layouts (NavBar and Footer)
+- Outlet
+    - Outlet component renders child routes within their parent route.
+
+
+- create a new component "SharedLayout.jsx"
+
+import { Outlet } from 'react-router-dom'
+
+import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
+
+export default function Sharedlayout() {
+  return (
+    <>
+      <Header />
+      <Footer />
+      <Outlet />
+    </>
+  )
+}
+
+```
+<Routes>
+    <Route path="/" element={<Sharedlayout/>} >
+        <Route path="/home" element={<><Alert /> <SectionOne/> </>} />
+        <Route path="mac" element={<Mac />} />
+        <Route path="iphone" element={<Iphone />} />
+        <Route path="ipad" element={<Ipad />} />
+        <Route path="watch" element={<Watch />} />
+        <Route path="tv" element={<TV />} />
+        <Route path="music" element={<Music />} />
+        <Route path="support" element={<Support />} />
+        <Route path='search' element={<Search /> }/>
+        <Route path="cart" element={<Cart />} />
+    </Route>
+<Routes>
+```
+
+
+
+
+
+
+
+
+
+
+# 4. iPhone Page - Products
+
+- fetch data from backend and display Products
+
+there are mainly 2 folder in our project
+    - client
+        - includes all vite and components
+    - server
+
+
+
+
+
+
+
+
+
+# 5. Single Product
+
+    - App.js
+        - specify route for single product in app.js
+            - <Route path="iphone/:productID" element={<ProductPage/>}/>
+    
+
+    - useParams (react-router-dom)
+        - useParams hook accesses parameters from the current route.
+        Returns an object of the dynamic params from the current URL that were matched by the route path.
+ 
+
+
+    - Fetch data from backend and display Single Product
+        - Fetch data
+        - filter out using useParams returned value
+
+
+
+
+
+
+
+
+
+
+
+# 6. Additional Tips - fetching data from JSON file, React Bootstrap, Deployment
+
+- Fetch data from JSON file instead of backend, so we can run/deploy only the frontend and still have access to the data.
+
+    place the json file in the public folder and fetch("/iphone.json")
+
+
+- React Bootstrap
+    npm install react-bootstrap bootstrap
+
+- Footer functionality
+    - StrictMode
+
+- Deploy React app on Netlify
+    - only the client side
+
+    - `npm run build` 
+        - will create deployable compressed folder
+        - run it inside "client" folder
+        - you can then DEPLLOY ON NETLIFY
 
 
 
