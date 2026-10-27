@@ -15,9 +15,9 @@ function Iphone() {
 
         async function getIphoneData(){
             try {
-                const response = await fetch("http://localhost:3001/iphones");
-                // fetch("/iphone.json");
-                // if you have a database
+                const response = await fetch("./iphone.json");
+                // fetch(http://localhost:3001/iphones");
+                // from backend
                  
                 const data = await response.json();
                 setProducts(data.products)
@@ -83,7 +83,7 @@ function Iphone() {
                             {/* Product Image Column  */}
                             <div className={`col-sm-12 col-md-6 my-auto order-${order2}`}>
                                 <div className="product-image">
-                                    <img src={product.Product_img} alt="product"/>
+                                    <img src={product.product_img} alt="product"/>
                                 </div>
                             </div>
 
